@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
             Physics.CheckSphere(transform.position, 3f);
         }
 
-        if(frame - PuloI > 70)
+        if(frame - PuloI > 60)
         {
             pulando = false;
 
