@@ -19,16 +19,18 @@ public class Movement : MonoBehaviour
         frame = frame + 1;
         if (Input.GetKey("d"))
         {
-            transform.Translate(0.015f, 0, 0);
+            transform.Translate(0.020f, 0, 0);
+            
         }
 
         if (Input.GetKey("a"))
         {
-            transform.Translate(-0.015f, 0, 0);
+            transform.Translate(-0.020f, 0, 0);
+            
         }
         if (frame - PuloI > 300&&!pulando)
         {
-            if (Input.GetKey("w"))
+            if (Input.GetKey("space"))
             {
                 
                 PuloI = frame;
@@ -40,15 +42,17 @@ public class Movement : MonoBehaviour
 
         if (pulando)
         {
-            transform.Translate(0, 0.06f, 0);
-            Physics.CheckSphere(transform.position, 1f);
+            transform.Translate(0, 0.05f, 0);
+            Physics.CheckSphere(transform.position, 3f);
         }
 
-        if(frame - PuloI > 60)
+        if(frame - PuloI > 70)
         {
             pulando = false;
+
         }
         
+       
     }
 
 }
